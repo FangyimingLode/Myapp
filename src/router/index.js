@@ -9,6 +9,7 @@ import AdminHomePage from '../pages/home/adminhome';
 import AdminHomeMorePage from '../pages/home/adminhome/more';
 import CreateMeetingPage from '../pages/home/create';
 import CameraScanPage from '../pages/home/scan/index';
+// 路由配置
 const LoginRouter = createStackNavigator({ Login: LoginPage });
 const HomeRouter = createStackNavigator({
   Home: HomePage,
