@@ -9,6 +9,8 @@ import AdminHomePage from '../pages/home/adminhome';
 import AdminHomeMorePage from '../pages/home/adminhome/more';
 import CreateMeetingPage from '../pages/home/create';
 import CameraScanPage from '../pages/home/scan/index';
+import Default from '../pages/home/default';
+// 路由配置
 const LoginRouter = createStackNavigator({ Login: LoginPage });
 const HomeRouter = createStackNavigator({
   Home: HomePage,
@@ -18,16 +20,17 @@ const HomeRouter = createStackNavigator({
   CreateMeeting: CreateMeetingPage,
   CameraScan: CameraScanPage
 });
-
+const testRouter = createStackNavigator({test: Default})
 // 进行登录状态的判断
 const AuthNavigation = createSwitchNavigator(
   {
     Home: HomeRouter,
     Login: LoginRouter,
+    testRouter
   },
   {
     //initialRouteName: getLoginUser().isLogin === true ? 'Home' : 'Login'
-    initialRouteName: 'Login',
+    initialRouteName: 'testRouter',
   },
 );
 

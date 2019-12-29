@@ -6,10 +6,14 @@ import {
     StyleSheet,
     Alert,
     Dimensions,
-    Animated} from 'react-native';
+    Animated
+} from 'react-native';
 import { Icon, Button, Tooltip, Card, Divider } from 'react-native-elements';
 import { get } from '../../utils/global';
 import AsyncStorage from '@react-native-community/async-storage';
+
+
+
 export default class HomePage extends React.Component {
     static navigationOptions = ({ navigation }) => {
         return {
@@ -100,7 +104,7 @@ export default class HomePage extends React.Component {
                 this.setState({ list1: res.data })
             })
     }
-    
+
     handleMeetingMore = (meetingId) => {
         console.warn(meetingId)
         AsyncStorage.setItem('meetingId', meetingId).then(() => {
@@ -322,49 +326,6 @@ export default class HomePage extends React.Component {
                 }
             </ScrollView>
         )
-    }
-    barcodeReceived(e) {
-        console.log(e, this.state.visiable, '搜啊吗');
-        get(`${e.data}`).then(() => {
-            Alert.alert(e.data);
-            this.setState({ visiable: false })
-        })
-        // if (this.state.show) {
-        //     this.state.show = false;
-        //     if (e) {
-        //         Vibration.vibrate([0, 500], false);
-        //         let result = e.data;
-        //         Alert.alert(
-        //             '扫描成功',
-        //             '扫描结果：' + result,
-        //             [
-        //                 {
-        //                     text: '确定', onPress: () => {
-        //                         this.setState({
-        //                             show: true
-        //                         })
-        //                     }
-        //                 }
-        //             ],
-        //             { cancelable: false }
-        //         )
-        //     } else {
-        //         Alert.alert(
-        //             '提示',
-        //             '扫描失败，请将手机对准二维码重新尝试',
-        //             [
-        //                 {
-        //                     text: '确定', onPress: () => {
-        //                         this.setState({
-        //                             show: true
-        //                         })
-        //                     }
-        //                 }
-        //             ],
-        //             { cancelable: false }
-        //         )
-        //     }
-        // }
     }
 }
 const height = Dimensions.get('window').height;

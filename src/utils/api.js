@@ -6,6 +6,7 @@ const CUSTOM_USER = 'custom-user';
 export const setLoginUser = params => {
 	return AsyncStorge.setItem(CUSTOM_USER, params);
 };
+
 export const getLoginUser = () => {
 	return AsyncStorge.getItem(CUSTOM_USER)
 		.then(res => {
@@ -13,3 +14,7 @@ export const getLoginUser = () => {
 		})
 		.catch(error => error);
 };
+
+// api 列表
+export const LOGINUSER = '/login/loginUser';
+

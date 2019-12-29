@@ -24,6 +24,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "native-base": "^2.13.8",
+    "rc-form": "^2.4.11",
     "react": "16.9.0",
     "react-devtools": "^4.2.1",
     "react-native": "0.61.5",
